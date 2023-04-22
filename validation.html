@@ -1,0 +1,102 @@
+<html>
+   <head>
+      <title>VALIDATION</title>
+      <style>
+          *{
+              margin:0px;
+              padding:0px;
+              box-sizing:border-box;
+            }
+           h1{
+              text-align:center;
+              animation:blink 2s linear infinite;
+            }
+           @keyframes blink{
+              0% {opacity:0;}
+              50% {opacity:1;}
+              1000% {opacity:0;}
+            }
+           form{
+              background-color:#fff;
+              padding:20px;
+              margin:auto;
+              max-width:600px;
+              box-shadow:0px 0px 10px #888;
+            }
+           input,select{
+              width:100%;
+              padding:12px;
+              border:1px solid red;
+              box-sizing:border-box;
+              border-radius:4px;
+              font-size:16px;
+              margin-bottom:16px;
+              background-color:#fff;
+            }
+            #submit{
+              background-color:red;
+              cursor:pointer;
+              border-radius:4px;
+            }
+            #submit:hover{
+              background-color:blue;
+            } 
+           
+     </style>
+  </head>
+   <body>
+      <h1>Registration Form</h1>
+      <form action="/" method="POST" id="myform">
+         <label>Name:</label>
+         <input type="text" id="name" name="fname" placeholder="Enter the name"><br>
+         <label>Email:</label>
+         <input type="email" id="email" name="email" placeholder="Enter the email"><br> 	
+         <input type="submit" id="submit">
+      </form>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js" 
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous">
+      </script>
+      <script>
+         $(document).ready(function(){
+            $("submit").click(function(){
+             var name= $("#name").val();
+             var email= $("#email").val();
+             var pwd= $("#password").val();
+
+               if(name.length=="")
+               {
+                  $("#name").focus();
+                  alert("Please enter your name");
+                  return false; 
+                    
+               }
+                if(email.length=="")
+               {
+                  $("#email").focus();
+                  alert("Please enter your email");
+                  return false;
+                    
+               }
+                 if(pwd.length=="")
+               {
+                  
+                   $("#password").focus();
+                  alert("Please enter your password");   
+                  return false;
+                  
+               }
+               else{
+                  var con= confirm("Are you done!!");
+                   if(con==true){
+                    alert("Welcome to our site");
+                     return true;
+                 }
+                  else{
+                    return false;
+                 }
+               }
+          });
+         });
+     </script>
+   </body>
+</html>
